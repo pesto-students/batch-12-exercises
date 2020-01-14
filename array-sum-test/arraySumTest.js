@@ -1,6 +1,6 @@
 
 function arraySumTest(...args) {
-  return args;
+  return args.reduce((a, b) => a + b);
 }
 
 export {
