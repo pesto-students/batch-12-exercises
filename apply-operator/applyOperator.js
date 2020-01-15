@@ -1,24 +1,23 @@
 
-function applyOperator(...args) {
-  const op = args.shift();
-  switch (op) {
+function applyOperator(operator, ...numbers) {
+  switch (operator) {
     case '+':
-      return args.reduce((a, b) => a + b, 0);
+      return numbers.reduce((a, b) => a + b, 0);
 
     case '-':
-      return args.reduce((a, b) => a - b, 0);
+      return numbers.reduce((a, b) => a - b, 0);
 
     case '*':
-      return args.reduce((a, b) => a * b, 1);
+      return numbers.reduce((a, b) => a * b, 1);
 
     case '%':
-      return args.reduce((a, b) => a % b);
+      return numbers.reduce((a, b) => a % b);
 
     case '/':
-      return parseFloat(args.reduce((a, b) => a / b).toFixed(4));
+      return parseFloat(numbers.reduce((a, b) => a / b).toFixed(4));
 
     default:
-      throw new Error('Operator is not valid');
+      throw new Error(`Received invalid operator ${operator}. Expected one of +,-,*,/,%`);
   }
 }
 
