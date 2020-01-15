@@ -14,12 +14,12 @@ class Stack {
 
   push(item) {
     this.items.push(item);
-    this.count = this.count + 1;
+    this.count += 1;
   }
 
   pop() {
     if (this.count > 0) {
-      this.count = this.count - 1;
+      this.count -= 1;
     }
 
     return this.items.pop();
@@ -42,7 +42,7 @@ describe('stack test', () => {
 
   test('should push elements to stack in order', () => {
     const actual = myStack.items;
-    const expected = [3, 2, 1];
+    const expected = [1, 2, 3];
 
     expect(actual).toEqual(expected);
   });
