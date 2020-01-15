@@ -1,8 +1,10 @@
 
 const counter = () => {
-  let c = 0;
-  // eslint-disable-next-line
-  return () => ++c;
+  let currentCounter = 0;
+  return () => {
+    currentCounter += 1;
+    return currentCounter;
+  };
 };
 
 
