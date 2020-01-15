@@ -1,1 +1,1 @@
-Return a true or false for wether a triangle can be formed using the three lines
+Return a true or false for whether a triangle can be formed using the three lines

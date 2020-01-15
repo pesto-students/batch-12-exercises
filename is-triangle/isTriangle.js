@@ -1,6 +1,7 @@
 
-function isTriangle(...args) {
-  return args;
+function isTriangle(sideA, sideB, sideC) {
+  const square = (number) => number * number;
+  return ((square(sideA) + square(sideB)) === square(sideC));
 }
 
 export {
