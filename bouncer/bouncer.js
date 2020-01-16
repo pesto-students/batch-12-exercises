@@ -1,6 +1,6 @@
 
-function bouncer(...args) {
-  return args;
+function bouncer(...arg) {
+  return arg;
 }
 
 export {
