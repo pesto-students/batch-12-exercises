@@ -1,6 +1,7 @@
 
-function objectDefaults(...args) {
-  return args;
+function objectDefaults(primaryObj,secondaryObj) {
+  const mergeObj = {...secondaryObj,...primaryObj};
+  return mergeObj;
 }
 
 export {

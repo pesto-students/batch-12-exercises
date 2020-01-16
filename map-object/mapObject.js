@@ -1,6 +1,10 @@
 
-function mapObject(...args) {
-  return args;
+function mapObject(sampleObject, modificationFunction) {
+  const updatedObject = {};
+  for(var key in sampleObject){
+    updatedObject[key] = modificationFunction(sampleObject[key]);
+  }
+  return updatedObject;
 }
 
 export {
