@@ -1,6 +1,10 @@
 
-function counter(...args) {
-  return args;
+function counter() {
+  let counterVariable = 0;
+  return () => {
+    counterVariable++;
+    return counterVariable;
+  }
 }
 
 export {
