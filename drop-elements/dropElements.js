@@ -1,10 +1,10 @@
 
 function dropElements(inputArray, inputFunction) {
-  return inputArray.reduce((arr, crr) => {
-    if (inputFunction(crr)) {
-      arr.push(crr);
+  return inputArray.reduce((resultArray, currentValue) => {
+    if (inputFunction(currentValue)) {
+      resultArray.push(currentValue);
     }
-    return arr;
+    return resultArray;
   }, []);
 }
 
