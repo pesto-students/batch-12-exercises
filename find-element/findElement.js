@@ -1,6 +1,6 @@
 
-function findElement(...args) {
-  return args;
+function findElement(inputArray, inputFunction) {
+  return inputArray.find((element) => inputFunction(element));
 }
 
 export {
