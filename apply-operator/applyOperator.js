@@ -1,21 +1,20 @@
 /* eslint-disable prefer-const */
 
 function applyOperator(...args) {
-  let operator = args[0];
-  args.shift();
-  if (args.length === 0) {
-    return 0;
-  }
+  let args1 = Array.prototype.slice.call(args);
+  let [operator, ...operand] = args1;
+  let expectedOperator = false;
+
   if (operator === '+') {
     let sum = 0;
-    for (let x of args) {
+    for (let x of operand) {
       sum = x + sum;
     }
     return sum;
   }
   if (operator === '-') {
     let sum = 0;
-    for (let x of args) {
+    for (let x of operand) {
       sum = x + sum;
     }
     sum -= (2 * sum);
@@ -23,7 +22,7 @@ function applyOperator(...args) {
   }
   if (operator === '*') {
     let mul = 1;
-    for (let x of args) {
+    for (let x of operand) {
       // eslint-disable-next-line operator-assignment
       mul = x * mul;
     }
@@ -32,19 +31,25 @@ function applyOperator(...args) {
   if (operator === '/') {
     let div = 1;
     // eslint-disable-next-line no-plusplus
-    for (let x = 0; x < args.length; x++) {
+    for (let x = 0; x < operand.length; x++) {
       // eslint-disable-next-line operator-assignment
-      div = div / args[x];
+      div = div / operand[x];
     }
     return Number(div.toFixed(4));
   }
   if (operator === '%') {
-    if (args.length > 1) {
-      return args.reduce((a, b) => a % b);
+    if (operand.length > 1) {
+      return operand.reduce((a, b) => a % b);
     }
-    return args[0];
+    return operand[0];
   }
-  throw new Error();
+  expectedOperator = true;
+  if (expectedOperator) {
+    throw new Error('Received invalid operator. Expected one of +,-,*,/,%');
+  }
+  if (operand.length === 0) {
+    return 0;
+  }
 }
 
 export {
