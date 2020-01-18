@@ -5,9 +5,6 @@ function isTriangle(...number) {
   return triangleside1 ** 2 + triangleside2 ** 2 === trianglebiggerside3 ** 2;
 }
 
-// isTriangle(5, 3, 4);
-
-
 export {
   isTriangle,
 };
