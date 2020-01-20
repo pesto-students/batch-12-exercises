@@ -1,6 +1,7 @@
 
 function bind(...args) {
-  return args;
+  const objFuncBind = func.bind(obj, ...params);
+  return objFuncBind;
 }
 
 export {
