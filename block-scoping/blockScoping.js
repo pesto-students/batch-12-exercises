@@ -1,6 +1,9 @@
 
 function blockScoping(number) {
-  return number;
+  const num = number;
+  return (function() {
+    return num;
+  }());
 }
 
 export {
