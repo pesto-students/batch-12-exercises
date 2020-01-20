@@ -7,9 +7,6 @@ const instructor = {
 };
 
 
-// instructor.sayHi();
-// console.log(instructor);
-
 export {
   instructor,
 };
