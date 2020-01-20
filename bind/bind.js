@@ -1,6 +1,6 @@
 
-function bind(...args) {
-  const objFuncBind = func.bind(obj, ...params);
+function bind(func, refObject, ...params) {
+  const objFuncBind = func.bind(refObject, ...params);
   return objFuncBind;
 }
 
