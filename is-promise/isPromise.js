@@ -1,7 +1,5 @@
 
-function isPromise(...args) {
-  return args;
-}
+const isPromise = (object) => Boolean(object instanceof Promise);
 
 export {
   isPromise,
