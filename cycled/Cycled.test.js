@@ -28,12 +28,12 @@ describe('Cycled', () => {
 
   test('.index', () => {
     const c = new Cycled(fixture);
-    expect(c.index).toBe(0);
-    c.index = 2;
-    expect(c.index).toBe(2);
+    expect(c.currentIndex).toBe(0);
+    c.currentIndex = 2;
+    expect(c.currentIndex).toBe(2);
     expect(c.current()).toBe(3);
-    c.index = -7;
-    expect(c.index).toBe(2);
+    c.currentIndex = -7;
+    expect(c.currentIndex).toBe(2);
     expect(c.current()).toBe(3);
   });
 
