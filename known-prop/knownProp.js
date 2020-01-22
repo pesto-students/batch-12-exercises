@@ -4,8 +4,7 @@ const knownProp = (target) => new Proxy(target, {
     if (key in target) {
       return Reflect.get(target, key);
     }
-    const e = new TypeError('/Unknown property/');
-    throw e;
+    throw new TypeError('/Unknown property/');
   },
 });
 
