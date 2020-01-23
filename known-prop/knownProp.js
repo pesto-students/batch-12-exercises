@@ -1,3 +1,4 @@
+// TODO : Refactor this code.
 const hasProperty = (target, key) => Object.prototype.hasOwnProperty.call(target, key);
 const handler = {
   get: (target, key) => {
