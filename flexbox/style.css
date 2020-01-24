@@ -1,0 +1,45 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    background-color: #812E80;
+}
+
+h1 {
+    align-self: center;
+    color: #ffffff;
+}
+
+main {
+    display: flex;
+    flex-flow: row;
+    margin: 8px 0;
+}
+
+main article {
+    background-color: #77F9FB;
+    flex: 1;
+    margin: 0 8px;
+    padding: 12px;
+}
+
+main article.thirdArticle {
+    flex-grow: 2;
+}
+
+.btncontainer {
+    display: flex;
+    margin: 24px 0;
+}
+
+.btncontainer button {
+    flex-grow: 1;
+    margin: 0 4px;
+    padding: 4px 8px;
+    font-size: 16px;
+}
