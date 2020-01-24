@@ -1,0 +1,90 @@
+body {
+    background-color: #000;
+    padding: 20px;
+}
+
+.outercircle {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+.innercircle {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 10px solid rgb(255, 255, 255);
+    position: relative;
+    animation: moving 2s linear 0s infinite;
+    top: -7px;
+    left: -4px;
+    border-radius: 50%;
+}
+.circle1 {
+    width: 90px;
+    height: 90px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+@keyframes moving{
+    25% {
+        transform: translate(70px,0);
+    }
+    50% {
+        transform: translate(70px, 70px);
+    }
+    75% {
+        transform: translate(0, 70px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+
+}
+/* Loader 2 Code */
+
+
+#loader2 {
+    margin: 24px;
+}
+
+.block {
+    display: inline-block;
+    width: 6px;
+    height: 24px;
+    background-color: green;
+    margin: 0 1px;
+    animation: scaling 1s ease-in-out infinite;
+    -webkit-animation: scaling 1s ease-in-out infinite;
+}
+
+@keyframes scaling {
+    0%,
+    20%,
+    100% {
+        transform: scaleY(0.6);
+    }
+
+    40% {
+        transform: scaleY(1);
+    }
+}
+
+.r2 {
+    animation-delay: 0.1s;
+}
+.r3 {
+    animation-delay: 0.2s;
+}
+.r4 {
+    animation-delay: 0.3s;
+}
+.r5 {
+    animation-delay: 0.4s;
+}
