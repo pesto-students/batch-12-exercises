@@ -2,11 +2,11 @@
 
 html {
   font-family: 'Helvetica neue', Arial, 'sans serif';
-  font-size: 10px;
+  font-size: 12px;
 }
 
 body {
-  width: 80em;
+  max-width: 80em;
   margin: 0 auto;
 }
 
@@ -20,8 +20,8 @@ h2 {
   font-size: 3.2em;
 }
 
-pli {
-  font-size: 1.7em;
+p, li {
+  font-size: 1.2em;
 }
 
 /*+++ more specific section styles +++*/
@@ -29,13 +29,15 @@ pli {
 /* header and footer */
 
 header, footer {
-  background-colour: teal;
-  height: 10em;
+  background-color: teal;
   padding: 2em;
+}
+header {
+  height: 10em;
 }
 
 h1, footer p {
-  margin: -70px;
+  margin: 0;
 }
 
 h1 {
@@ -54,6 +56,17 @@ main p, main li {
 }
 
 img {
-  float: right
+  float: right;
   margin: 1.2em 2em;
+  max-height: 220px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+@media only screen and (max-width: 600px) {
+  img {
+    float: none;
+  }
 }
