@@ -1,4 +1,3 @@
-
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0-modified | 20110126
    License: none (public domain)
@@ -473,81 +472,65 @@ textarea {
 
 /* End Reset CSS */
 
-/* General styles */
+/* General styles - put these straight into your stylesheet */
 
 body {
-  font-family: 'Helvetica neue', Arial, 'sans serif';
-  font-size: 12px;
-  max-width: 80em;
-  margin: 0 auto;
-}
-
-/* Typography */
-
-h1 {
-  font-size: 4em;
-  font-weight: bold;
-}
-
-h2 {
-  font-size: 3.2em;
-  font-weight: bold;
-}
-
-p, li {
-  font-size: 1.2em;
-}
-
-/*+++ more specific section styles +++*/
-
-/* header and footer */
-
-header, footer {
-  background-color: teal;
-  padding: 2em;
-}
-header {
-  height: 10em;
-}
-
-h1, footer p {
   margin: 0;
 }
 
-h1 {
-  text-align: center;
-  padding: 0.5em 0;
+html {
+  font-family: 'Helvetica neue', Arial, 'sans serif';
+  font-size: 10px;
+  background-color: #ccc;
 }
 h2 {
-  margin-bottom: 18px;
+  font-size: 2.2em;
+  font-weight: bold;
+  
+}
+/* Selectors to be matched up with rulesets */
+.card article {
+  color: #ffffff;
+  background-color: #AF2D24;
+  padding: 12px;
+  height: 100px;
+  position: relative;
+}
+.card article address {
+  line-height: 1.4em;
+}
+.card article img {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.card footer {
+  border-radius: 1.5em 1.5em 0 0;
+  font-size: 1.4em;
+  font-weight: 500;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 12px;
+}
+.card header {
+  border-radius: 0 0 1.5em 1.5em;
+  height: 40px;
+}
+.card header h2 {
+  line-height: 40px;
+  margin-left: 12px;
+}
+.card {
+   width: 35em;
+   height: 196px;
+   margin: 5em auto;
+   background-color: #DD3B30;
+   border: 0.2em solid black;
+   border-radius: 1.5em;
 }
 
-/* main content */
 
-main {
-  padding: 2em;
-}
 
-main p, main li {
-  line-height: 2.2;
-}
 
-img {
-  float: right;
-  margin: 1.2em 2em;
-  max-height: 220px;
-}
-ul {
-  list-style: disc;
-  margin-left: 32px;
-}
 
-.clearfix {
-  clear: both;
-}
-
-@media only screen and (max-width: 600px) {
-  img {
-    float: none;
-  }
-}
