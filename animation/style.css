@@ -17,19 +17,19 @@ body {
     background-color: #fff;
     border: 10px solid rgb(255, 255, 255);
     position: relative;
-    animation: moving 2s linear 0s infinite;
+    animation: moving 1.5s linear 0s infinite;
     top: -7px;
     left: -4px;
     border-radius: 50%;
 }
 .circle1 {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     background: #000;
     border-radius: 50%;
     position: absolute;
-    left: 5px;
-    top: 5px;
+    left: 10px;
+    top: 10px;
 }
 
 @keyframes moving{
