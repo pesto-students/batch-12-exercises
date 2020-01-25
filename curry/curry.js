@@ -1,12 +1,12 @@
 
 
-function curry(func) {
+function curry(funcToBeCurried) {
   return function curried(...args){
-    if(args.length >= func.length){
-      return func.call(null,...args)
+    if(args.length >= funcToBeCurried.length){
+      return funcToBeCurried(...args)
     }else{
       return function(...args2){
-        return curried.call(null, ...args.concat(...args2));
+        return curried(...args.concat(...args2));
       }
     }
   }
