@@ -3,13 +3,13 @@
     "segmentName": "segment-1",
     "exercises": {
         "bind": {
-            "completed": false
+            "completed": true
         },
         "block-scoping": {
             "completed": true
         },
         "const-immutable": {
-            "completed": false
+            "completed": true
         },
         "create-student": {
             "completed": false
@@ -24,7 +24,7 @@
             "completed": true
         },
         "map-filter-and-reduce": {
-            "completed": false
+            "completed": true
         },
         "place-in-middle": {
             "completed": false
