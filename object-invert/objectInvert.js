@@ -1,16 +1,14 @@
-
-function objectToKeyValueArrays(object) {
-  const objectkeys = Object.keys(object);
-  const objectvalues = Object.values(object);
-  return [objectkeys, objectvalues];
-}
-
 function objectInvert(object) {
-  const intervtedObject = {};
-  const [keyarray, valuearray] = objectToKeyValueArrays(object);
-  // eslint-disable-next-line no-return-assign
-  valuearray.forEach((key, i) => intervtedObject[key] = keyarray[i]);
-  return JSON.parse(JSON.stringify(intervtedObject));
+  const objectMap = new Map();
+  for (const [key, value] of Object.entries(object)) {
+    objectMap.set(value, key);
+  }
+  const intervertedObj = Array.from(objectMap).reduce((obj, [key, value]) => {
+    // eslint-disable-next-line no-param-reassign
+    obj[key] = value;
+    return obj;
+  }, {});
+  return intervertedObj;
 }
 
 export {
