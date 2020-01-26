@@ -1,6 +1,6 @@
 
-function roundTo(...args) {
-  return args;
+function roundTo(number, roundRadix) {
+  return Number.parseFloat(number.toPrecision(roundRadix));
 }
 
 export {
