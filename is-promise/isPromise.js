@@ -1,6 +1,7 @@
 
-function isPromise(...args) {
-  return args;
+function isPromise(object) {
+  const promise = Promise.resolve(object);
+  return promise === object;
 }
 
 export {
