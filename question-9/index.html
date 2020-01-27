@@ -1,17 +1,24 @@
-<!-- Write a JavaScript program to highlight the bold words of the following paragraph, on mouse over a certain link. Go to the editor -->
-
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
 
-<body>
+  <body>
+    <p>
+      Lorem Ipsum is simply <strong>dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s, 
+      when an unknown <strong>printer</strong> took a galley of type and scrambled it to make a
+      type specimen book. 
+      It has survived not only five <strong>centuries</strong>, but also the leap into electronic typesetting,
+      remaining essentially unchanged.
+    </p>
+    <a href='javascript:void(0)' onmouseout='removehighlightbold()' onmouseover='highlightbold()'>Hover your mouse </a>
 
-</body>
-
+    <script src='script.js' type='text/javascript'></script>
+  </body>
 </html>
