@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset=utf-8 />
+  <meta charset="utf-8" />
   <title>JS DOM paragraph style</title>
 </head>
 
@@ -11,6 +11,14 @@
   <div>
     <button id="jsstyle" onclick="js_style()">Style</button>
   </div>
+  <script>
+    function js_style(){
+      var domText = document.getElementById('text');
+      domText.style.fontSize="32px";
+      domText.style.color="Red";
+      domText.style.border = "1px green solid";
+    }
+  </script>
 </body>
 
 </html>
