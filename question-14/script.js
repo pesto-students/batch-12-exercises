@@ -1,7 +1,4 @@
 window.onscroll = function() {
-    console.log(window.scrollY);
-    console.log(document.body.offsetHeight);
-    console.log(window.innerHeight, 'innerheight');
     if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         showLoader();
         setTimeout(() => {
