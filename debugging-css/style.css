@@ -6,7 +6,8 @@ html {
 }
 
 body {
-  width: 80em;
+  width: 60em;
+  align-items: center;
   margin: 0 auto;
 }
 
@@ -29,18 +30,14 @@ pli {
 /* header and footer */
 
 header, footer {
-  background-colour: teal;
+  background-color: teal;
   height: 10em;
-  padding: 2em;
-}
-
-h1, footer p {
-  margin: -70px;
 }
 
 h1 {
   text-align: center;
   padding: 0.5em 0;
+  margin: 0;
 }
 
 /* main content */
@@ -54,6 +51,18 @@ main p, main li {
 }
 
 img {
-  float: right
-  margin: 1.2em 2em;
+  float: right;
+  margin: 1 1.5em;
+}
+
+/* footer content */
+footer{
+  position: absolute;
+  bottom:0;
+  width:60%;
+  height:auto;
+}
+
+footer p {
+  padding: 0.5em 0.8em;
 }
