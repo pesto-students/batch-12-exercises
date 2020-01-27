@@ -27,6 +27,7 @@
 
 .loader {
   margin: 20px auto;
+  display: none;
 }
 
 .loader > div {
