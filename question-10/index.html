@@ -17,21 +17,52 @@ Use the childNodes property to access a group of child elements -->
 
 <body>
 
-  <div id="page">
-  
-    <div id="header">
-      <h1 id="title">Page title</h1>
-    </div>
-  
-    <div id="content">
-    
-      <h2>Content title</h2>
-    
-      <p>Some copy goes here</p>
-    
-      <p>More copy goes here</p>
-      </div>
-    </div>
+  <div id="page"><div id="header"><h1 id="title">Page title</h1></div><div id="content"><h2>Content title</h2><p>Some copy goes here</p><p>More copy goes here</p></div><ol id="myList"><li>Some text</li><li>Some text</li></ol><p>some more content</p>
+  </div>
+
+  <button onclick="driveThroughElements()">Drive the HTML</button>
+  <h3 id="info"></h3>
+
+  <script>
+    const obj = {
+      'current':'blue',
+      'parent':"aqua",
+      'firstChild':"green",
+      'lastChild':"red",
+      'nextSibling':"violet",
+      'previousSibling':"orange",
+      'child':'pink'
+      }
+    function highlight(node,level){
+      node.style.backgroundColor = obj[level];
+      const p = document.getElementById('info');
+      p.innerText = level;
+      setTimeout(()=>{
+        node.style.backgroundColor = "inherit";
+      },500);
+    }
+    function driveThroughElements() {
+      const myList = document.getElementById('myList');
+      highlight(myList,'current');
+      const firstChildValue =  myList.firstChild;
+      setTimeout(()=>{highlight(firstChildValue,'firstChild')},600);
+      const lastChildValue =  myList.lastChild;
+      setTimeout(()=>{highlight(lastChildValue,'lastChild')},1200);
+      const nextSibling = myList.nextSibling;
+      setTimeout(()=>{highlight(nextSibling,'nextSibling')},1800);
+      const previousSibling = myList.previousSibling;
+      setTimeout(()=>{highlight(previousSibling,'previousSibling')},2300);
+      const parent = myList.parentNode;
+      setTimeout(()=>{highlight(parent,'parent')},2800);
+      const childNodes = parent.childNodes;
+      let index = 0;
+      for(const child of childNodes){
+        ++index;
+        setTimeout(()=>{highlight(child,'child')},(2800+index*600));
+      }
+      clearTimeout();
+    }
+  </script>
 </body>
 
 </html>

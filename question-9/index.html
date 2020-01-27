@@ -11,7 +11,22 @@
 </head>
 
 <body>
-
+  <p id="text"><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry. <b>Lorem Ipsum</b> has been the
+    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
+    to make a type specimen book. <b>It has survived not only five centuries, but also</b> the leap into electronic
+    typesetting, remaining essentially unchanged. <b>It was popularised</b> in the 1960s with the release of Letraset sheets
+    containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+    versions of Lorem Ipsum</p>
+    <a href="#" onmouseover="highlightTheBoldText()">Highlight the bold text</a>
+  <script>
+    function highlightTheBoldText(){
+      var paragraph = document.getElementById("text");
+      var boldText = document.getElementsByTagName("b");
+      for(const element of boldText){
+        element.style.backgroundColor = "aqua";
+      }
+    }
+  </script>
 </body>
 
 </html>
