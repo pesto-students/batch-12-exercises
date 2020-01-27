@@ -12,6 +12,7 @@ body {
   width: 60px;
   border-radius: 50%;
   cursor: pointer;
+  display: none;
 }
 
 .up {
@@ -23,4 +24,3 @@ body {
   color: white;
   font-family: sans-serif
 }
-
