@@ -1,26 +1,73 @@
 import React, { Component } from 'react';
 
-/*
-* Exercise 2:
-*
-*  Create a `StopWatch` component that has a Start/Stop button and a Clear
-*  button.
-*
-*  Pressing Start will start a timer and the lapsed time in
-*  milliseconds should be displayed above the buttons.
-*
-*  Once started the Start button should change to Stop. Clicking Stop
-*  will stop the timer but lapsed time will be preserved.
-*
-*  Clicking Start again will resume the timer from where it left off.
-*
-*  Clicking Clear will stop the timer if it's running and reset the lapsed time to 0.
-*/
-
 class StopWatch extends Component {
+  constructor() {
+    super();
+    this.state = {
+      lapsedTime: {
+        milliseconds: 0,
+        seconds: 0
+      },
+      buttonState: 'Start'
+    }
+    this.timer;
+  }
+
+  
+  addTimer = () => {
+    let {milliseconds, seconds} = this.state.lapsedTime;
+    milliseconds += 1;
+    if (milliseconds >= 1000) {
+      milliseconds = 0;
+      seconds += 1;
+    }
+
+    this.setState({
+      lapsedTime: {
+        milliseconds: milliseconds,
+        seconds: seconds
+      }
+    })
+  }
+
+
+  handleTimer = () => {
+    const buttonState = this.state.buttonState;
+    if (buttonState === 'Start') {
+      this.timer = setInterval(this.addTimer, 1);
+      this.setState({
+        buttonState: 'Stop'
+      })
+    }
+    if (buttonState === 'Stop') {
+      clearInterval(this.timer);
+      this.setState({
+        buttonState: 'Start',
+      })
+    }
+    
+  }
+
+  resetTimer = () => {
+    clearInterval(this.timer);
+    this.setState({
+      lapsedTime: {
+        milliseconds: 0,
+        seconds: 0
+      },
+      buttonState: 'Start'
+    })
+  }
+
   render() {
+    const {milliseconds, seconds} = this.state.lapsedTime;
     return (
-      <div>Stop Watch</div>
+      <React.Fragment>
+        <div>Stop Watch</div>
+        <button onClick={this.handleTimer} className='btn'>{this.state.buttonState}</button>
+        <button onClick={this.resetTimer} className='btn red'>Clear</button>
+        <p>{seconds}s : {milliseconds}</p>
+      </React.Fragment>
     );
   }
 }
