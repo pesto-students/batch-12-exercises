@@ -20,49 +20,77 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class RadioGroup extends React.Component {
+  constructor() {
+    super();
+    const {defaultValue} = this.props;
+    this.state = {
+      defaultValue: defaultValue,
+    }
+  }
+  
   static propTypes = {
-    // defaultValue: PropTypes.string,                UN-COMMENT THIS LINE
+    defaultValue: PropTypes.string,
     children: PropTypes.shape().isRequired,
   };
+
   render() {
     return (
-      <div>{this.props.children}</div>
+      <React.Fragment>
+        {this.props.children}
+      </React.Fragment>
     );
   }
 }
 
 class RadioOption extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      'isSelected': false,
+      'value':''
+    }
+  }
   static propTypes = {
-    // value: PropTypes.string,                       UN-COMMENT THIS LINE
+    value: PropTypes.string,
     children: PropTypes.shape().isRequired,
   };
 
+  handleClick = () => {
+    console.log('nitish');
+    const prevState = this.state.isSelected;
+    this.setState({
+      isSelected: prevState
+    })
+  }
   render() {
     return (
       <div>
-        <RadioIcon isSelected={false} /> {this.props.children}
+        <RadioIcon isSelected={this.state.isSelected} onClick={this.handleClick}/> {this.props.children}
       </div>
     );
   }
 }
 
 class RadioIcon extends React.Component {
+  
   static propTypes = {
     isSelected: PropTypes.bool.isRequired,
   };
 
+
   render() {
+    const { isSelected } = this.props;
     return (
       <div
         style={{
           borderColor: '#ccc',
           borderWidth: 3,
-          borderStyle: this.props.isSelected ? 'inset' : 'outset',
+          borderStyle: isSelected ? 'inset' : 'outset',
           height: 16,
           width: 16,
           display: 'inline-block',
           cursor: 'pointer',
-          background: this.props.isSelected ? 'rgba(0, 0, 0, 0.05)' : '',
+          background: isSelected ? 'rgba(0, 0, 0, 0.05)' : '',
         }}
       />
     );
@@ -75,7 +103,7 @@ class CompoundComponents extends React.Component {
       <div>
         <h1>♬ It is about time that we all turned off the radio ♫</h1>
 
-        <RadioGroup defaultValue="fm">
+        <RadioGroup defaultValue="fm" >
           <RadioOption value="am">AM</RadioOption>
           <RadioOption value="fm">FM</RadioOption>
           <RadioOption value="tape">Tape</RadioOption>
