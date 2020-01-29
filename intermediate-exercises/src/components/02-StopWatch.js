@@ -18,9 +18,49 @@ import React, { Component } from 'react';
 */
 
 class StopWatch extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      timeLapsed: 0,
+      isOn: false,
+      atStart: 0
+    };
+  }
+
+  startTimer() {
+    this.setState({
+      isOn: true,
+      timeLapsed: this.state.time,
+      atStart: Date.now() - this.state.timeLapsed
+    })
+    this.timer = setInterval(() => this.setState({
+      timeLapsed: Date.now() - this.state.atStart
+    }), 1);
+  }
+
+  stopTimer() {
+    this.setState({
+      isOn: false
+    })
+    clearInterval(this.timer);
+  }
+
+  clearTimer() {
+    clearInterval(this.timer);
+    this.setState({
+      timeLapsed: 0,
+      isOn: false
+    });
+  }
+
   render() {
+    const label = this.state.isOn ? 'Stop' : 'Start';
     return (
-      <div>Stop Watch</div>
+      <div>
+        <h1>Timer: {this.state.timeLapsed} ms</h1>
+        <button onClick={() => this.state.isOn ? this.stopTimer() : this.startTimer()}>{label}</button>
+        <button onClick={() => this.clearTimer()}>Clear</button>
+      </div>
     );
   }
 }
