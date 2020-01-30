@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Color } from './Color';
+import Color from './Color';
 import '../styles/ColorList.css';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
@@ -26,10 +26,13 @@ const ColorList = (props) => {
       <div className="App-intro">
         <p>Please select a color.</p>
         <Router>
-          <ul>{colorLinks}</ul>
-          <Switch>
-            {colorSwitch}
-          </Switch>
+          <div>
+            <ul>{colorLinks}</ul>
+            <Switch>
+              {colorSwitch}
+            </Switch>
+          </div>
+
         </Router>
       </div>
     </div>
