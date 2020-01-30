@@ -1,13 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import Color from './Color';
 import '../styles/ColorList.css';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 const ColorList = (props) => {
   const colorLinks = props.colors.map(color => (
     <li key={color.hex}>
-      {color.name}
+      <Link to={color.name}>
+        {color.name}
+      </Link>
     </li>
+  ));
+  const colorSwitch = props.colors.map(color => (
+    <Route path={`/${color.name}`}>
+      <Color name={color.name} hex={color.hex} />
+    </Route>
   ));
   return (
     <div className="App">
@@ -17,7 +25,15 @@ const ColorList = (props) => {
       </header>
       <div className="App-intro">
         <p>Please select a color.</p>
-        <ul>{colorLinks}</ul>
+        <Router>
+          <div>
+            <ul>{colorLinks}</ul>
+            <Switch>
+              {colorSwitch}
+            </Switch>
+          </div>
+
+        </Router>
       </div>
     </div>
   );
