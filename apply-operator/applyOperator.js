@@ -1,6 +1,5 @@
 
 function applyOperator(Operator, ...operands) {
-  const z = 0;
   return Operator === '+' ? operands.reduce((acc, el) => acc + el, 0)
     : Operator === '-' ? operands.reduce((acc, el) => acc - el, 0)
       : Operator === '*' ? operands.reduce((acc, el) => acc * el, 1)
