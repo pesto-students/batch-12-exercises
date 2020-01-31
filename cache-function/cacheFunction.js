@@ -1,12 +1,12 @@
 
-function cacheFunction(predicateFn) {
+function cacheFunction(predicateFunction) {
   const cache = {};
-  return ((...args) => {
-    if (!(args in cache)) {
-      cache[args] = predicateFn(args);
+  return (input) => {
+    if ((input in cache) === false) {
+      cache[input] = predicateFunction(input);
     }
-    return cache[args];
-  });
+    return cache[input];
+  };
 }
 
 export {
