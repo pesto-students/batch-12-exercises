@@ -1,5 +1,5 @@
 
-function applyOperator(operator, ...numbers) {
+const applyOperator = (operator, ...numbers) => {
   switch (operator) {
     case '+':
       return numbers.reduce((a, b) => a + b, 0);
@@ -17,9 +17,9 @@ function applyOperator(operator, ...numbers) {
       return parseFloat(numbers.reduce((a, b) => a / b).toFixed(4));
 
     default:
-      throw new Error(`Received invalid operator ${operator}. Expected one of +,-,*,/,%`);
+      throw new Error(`Received invalid operator ${operator}.\n Expected one of +, -, *, /, %`);
   }
-}
+};
 
 export {
   applyOperator,
