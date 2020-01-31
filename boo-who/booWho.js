@@ -1,7 +1,5 @@
 
-function booWho(inputVariable) {
-  return (typeof inputVariable === 'boolean');
-}
+const booWho = (value) => [true, false].includes(value);
 
 export {
   booWho,
