@@ -1,7 +1,5 @@
 
-function bouncer(...arg) {
-  return arg;
-}
+const bouncer = (array) => array.filter(Boolean);
 
 export {
   bouncer,
