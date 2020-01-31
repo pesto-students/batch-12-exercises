@@ -1,5 +1,6 @@
 
 const isSquare = (value) => Math.floor(value ** 0.5) === (value ** 0.5);
+const getSquare = (value) => value ** 2;
 
 function sumOfPerfectSquares(value) {
   // There can only be 4 possible solutions -> 1,2,3,4
@@ -9,10 +10,10 @@ function sumOfPerfectSquares(value) {
   }
 
   // Manually checking for result 2
-  for (let i = 0; i <= value; i += 1) {
-    // if x=n-i*i   and x is a valid square then OBVIOUSLY
-    // n=i^2 +sqrt(x)^2  ,so n is a square of two numbers
-    if (isSquare(value - i * i)) {
+  for (let index = 0; index <= value; index += 1) {
+    // if x=n-index * index   and x is a valid square then OBVIOUSLY
+    // n=index^2 +sqrt(x)^2  ,so n is a square of two numbers
+    if (isSquare(value - getSquare(index))) {
       return 2;
     }
   }
@@ -26,6 +27,7 @@ function sumOfPerfectSquares(value) {
   if (i % 8 === 7) {
     return 4;
   }
+
   // otherwise
   return 3;
 }
