@@ -1,17 +1,17 @@
 
-const counterFactory = (function () {
-  let c = 0;
+function counterFactory() {
+  let counter = 0;
   return {
     increment: () => {
-      c += 1;
-      return c;
+      counter += 1;
+      return counter;
     },
     decrement: () => {
-      c -= 1;
-      return c;
+      counter -= 1;
+      return counter;
     },
   };
-});
+}
 
 export {
   counterFactory,
