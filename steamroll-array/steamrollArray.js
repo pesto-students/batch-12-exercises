@@ -1,6 +1,6 @@
 
-function steamrollArray(...args) {
-  return args;
+function steamrollArray(nonflatarray) {
+  return nonflatarray.flat(Infinity);
 }
 
 export {

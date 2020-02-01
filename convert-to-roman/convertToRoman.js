@@ -1,6 +1,6 @@
 
-function convertToRoman(...args) {
-  return args;
+function convertToRoman(number) {
+  return number;
 }
 
 export {

@@ -1,6 +1,12 @@
 
-function pairwise(...args) {
-  return args;
+function pairwise(numberlist, number) {
+  let indiceSum;
+  let ableToFindPair = true;
+  if (!numberlist.length) {
+    return 0;
+  }
+  
+  
 }
 
 export {
