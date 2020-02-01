@@ -1,7 +1,5 @@
 
-function boolean(...args) {
-  return args;
-}
+const boolean = (arg) => Boolean(arg);
 
 export {
   boolean,
