@@ -1,8 +1,11 @@
+import dataset from './dataset.json';
 
-function accountDataset(...args) {
-  return args;
+function hundredThousandairs() {
+  console.log(dataset.bankBalances);
 }
 
-export {
-  accountDataset,
-};
+// export {
+//   accountDataset,
+// };
+
+hundredThousandairs();
