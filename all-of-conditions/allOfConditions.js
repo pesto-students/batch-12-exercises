@@ -1,6 +1,6 @@
 
 function allOfConditions(...functionArray) {
-  return function (input) {
+  return (input) => {
     functionArray.every((eachfn) => eachfn(input));
   };
 }
