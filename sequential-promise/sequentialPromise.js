@@ -1,6 +1,7 @@
 
-function sequentialPromise(...args) {
-  return args;
+function sequentialPromise(promiseArray) {
+  const transformdata = promiseArray.reduce((promise, cb) => promise.then(cb), Promise.resolve());
+  return transformdata;
 }
 
 export {
