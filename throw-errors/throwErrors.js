@@ -5,9 +5,8 @@ function throwErrors() {
   } catch (e) {
     return e;
   }
-  // throw new ReferenceError('error');
 }
-// console.log(throwErrors() instanceof ReferenceError);
+
 const errorName = throwErrors().name;
 
 export { errorName };
