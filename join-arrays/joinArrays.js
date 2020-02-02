@@ -1,6 +1,6 @@
 
-function joinArrays(...args) {
-  return args;
+function joinArrays(...collectionOfArray) {
+  return collectionOfArray.flat(Infinity);
 }
 
 export {
