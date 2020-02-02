@@ -1,8 +1,12 @@
 
-function throwErrors(...args) {
-  return args;
+function throwErrors() {
+  try {
+    throw new ReferenceError('Hello', 'someFile.js', 10);
+  } catch (e) {
+    return e;
+  }
 }
 
-export {
-  throwErrors,
-};
+const errorName = throwErrors().name;
+
+export { errorName };
