@@ -1,12 +1,21 @@
 describe('A simple iterable without items inside, implementing the right protocol', () => {
-  function iteratorFunction() {}
+  function iteratorFunction() {
+    return {
+      next: function() {
+        return {
+          done: true
+        }
+      },
+    }
+  }
 
   describe('the `iteratorFunction` needs to comply to the iterator protocol', () => {
+    // iteratorFunction();
     it('must return an object', () => {
-      expect(typeof iteratorFunction()).toBe('object');
+      expect(typeof iteratorFunction().toBe('object');
     });
     it('the object must have a function assigned to a key `next`', () => {
-      expect(typeof iteratorFunction().next).toBe('function');
+      expect(typeof iteratorFunction().next()).toBe('function');
     });
     it('calling `next()` must return an object with `{done: true}`', () => {
       expect(iteratorFunction().next()).toEqual({

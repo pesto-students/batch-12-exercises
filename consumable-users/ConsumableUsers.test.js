@@ -4,17 +4,19 @@ describe('Iterator usages', () => {
   let usersIterable;
   beforeEach(() => {
     const consumableUsers = new ConsumableUsers();
-
+    console.log(consumableUsers);
     function iteratorFunction() {
       return {
         next: () => ({
-          value: consumableUsers.nextUser,
-          done: consumableUsers.done,
+          value: consumableUsers.nextUser(),
+          done: consumableUsers.done(),
         }),
       };
     }
 
-    usersIterable = {};
+    usersIterable = {
+      [Symbol.iterator]: iteratorFunction,
+    };
   });
 
   describe('create an iterator/iterable', () => {
