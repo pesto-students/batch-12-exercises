@@ -23,8 +23,6 @@ function updateObject(...args){
   }
 }
 
-console.log(updateObject(2)(4)([0, 1, 2, 3]))
-
 export {
   updateObject,
 };
