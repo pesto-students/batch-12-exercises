@@ -8,7 +8,35 @@ class App extends Component {
     posts: [],
   };
 
+  fetchPosts() {
+    const myHeaders = new Headers ({
+      'pesto-password': 'darth vader'
+    });
+    fetch('http://localhost:3001/posts', {
+      headers: myHeaders,
+      method: 'GET'
+    }).then((response) => {
+      if(!response.ok) {
+        console.log("Network Error occured in fetch call");
+        return {};
+      }
+      return response.json();
+    }).then((data) => {
+      for (const post of data['data']) {
+        const {id, title} = post;
+        this.setState((state) => {
+          state.posts[id] = {
+            id,
+            title
+          };
+        });
+      }
+    });
+  }
+
   render() {
+    this.fetchPosts();
+    console.log(this.state);
     return (
       <div>
         <h2>Posts</h2>
