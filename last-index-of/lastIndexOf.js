@@ -1,6 +1,7 @@
 
-function lastIndexOf(...args) {
-  return args;
+function lastIndexOf(element, array) {
+  const lastIndex = array.lastIndexOf(element);
+  return lastIndex;
 }
 
 export {
