@@ -1,13 +1,12 @@
 
 const lastIndexOf = (element, array) => {
-  let index = array.length - 1;
-  // eslint-disable-next-line
-  for (; index > -1; index += 1) {
-    if (array[index] === element) {
-      return index;
+  let lastIndex = -1;
+  for (const index in array) {
+    if ((array[index] === element) && (lastIndex < index)) {
+      lastIndex = index;
     }
   }
-  return index;
+  return parseInt(lastIndex, 10);
 };
 
 export {

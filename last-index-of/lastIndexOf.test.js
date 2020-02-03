@@ -14,6 +14,7 @@ describe('lastIndexOf', () => {
   it('returns the last index of the first item', () => {
     expect(lastIndexOf(1, input)).toBe(5);
   });
+  
   it('returns the index of the last item', () => {
     expect(lastIndexOf(5, input)).toBe(4);
   });
