@@ -1,6 +1,7 @@
+const EventEmitter = require('events');
 
-function isStream(...args) {
-  return args;
+function isStream(streamFn) {
+  return streamFn instanceof EventEmitter;
 }
 
 export {
