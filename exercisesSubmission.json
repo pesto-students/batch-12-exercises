@@ -6,7 +6,7 @@
             "completed": false
         },
         "split-lines": {
-            "completed": false
+            "completed": true
         },
         "basic-mongo-one": {
             "completed": true
