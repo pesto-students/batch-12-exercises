@@ -13,24 +13,9 @@ const movieRating = async () => {
   return movieName;
 };
 
-/* Q3 (*)
-  Return the number of movies written by all these people (exactly these people in this order):
-  Roberto Orci
-  Alex Kurtzman
-  Damon Lindelof
-  Gene Roddenberry
-*/
 const writersIntersection = async () => {
   const db = await getDb();
-  db.collection('movieDetails').aggregate([
-    {
-      $project: {
-        "intersection": {
-          $setIntersection: []
-        }
-      }
-    }
-  ])
+  return db.collection('movieDetails').find({ writers: ["Roberto Orci", "Alex Kurtzman", "Damon Lindelof", "Gene Roddenberry"] }).count();
 };
 
 /* Q4 (*)
