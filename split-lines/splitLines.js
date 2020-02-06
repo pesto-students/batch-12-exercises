@@ -1,5 +1,6 @@
 
 function splitLines(...args) {
+  
   return args;
 }
 
